@@ -1,5 +1,7 @@
 # Projeto de Análise de Vendas com Python
 
+![Capa do Projeto de Análise de Vendas com Python](capa-projeto-python.png)
+
 ## Sobre o projeto
 
 Este projeto foi desenvolvido com o objetivo de praticar os fundamentos da linguagem Python por meio da análise de dados de vendas de produtos fictícios.
