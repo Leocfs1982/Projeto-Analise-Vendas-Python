@@ -36,6 +36,11 @@ with open(caminho_csv, "r", encoding="utf-8") as arquivo:
     for linha in leitor:
         if not linha:
             continue
+
+        if len(linha) < 3:
+            print("Linha incompleta no arquivo CSV:", linha)
+            continue
+
         produto = linha[0]
         try:
             quantidade = int(linha[1])
@@ -69,16 +74,26 @@ for produto, faturamento in lista_faturamentos:
 print("-" * 30)
 
 print("3. PARTICIPACAO NO FATURAMENTO TOTAL")
-for produto, faturamento in lista_faturamentos:
-    percentual = (faturamento / faturamento_total) * 100
-    print(f"{produto}: {percentual:.2f}% do faturamento total")
+
+if faturamento_total > 0:
+    for produto, faturamento in lista_faturamentos:
+        percentual = (faturamento / faturamento_total) * 100
+        print(f"{produto}: {percentual:.2f}% do faturamento total")
+else:
+    print("Não há faturamento válido para calcular os percentuais.")
+
 print("=" * 30)
 print("4. RESUMO GERAL DAS VENDAS")
 print(f"Faturamento total: {formatar_reais(faturamento_total)}")
-print(f"Produto com maior faturamento: {produto_maior_faturamento}")
-print(f"Valor: {formatar_reais(maior_faturamento)}")
-print(f"Produto com menor faturamento: {produto_menor_faturamento}")
-print(f"Valor: {formatar_reais(menor_faturamento)}")
+
+if total_produtos > 0:
+    print(f"Produto com maior faturamento: {produto_maior_faturamento}")
+    print(f"Valor: {formatar_reais(maior_faturamento)}")
+    print(f"Produto com menor faturamento: {produto_menor_faturamento}")
+    print(f"Valor: {formatar_reais(menor_faturamento)}")
+else:
+    print("Não há produtos válidos para identificar maior e menor faturamento.")
+
 print(f"Quantidade total vendida: {quantidade_total} unidades")
 
 if total_produtos > 0:
