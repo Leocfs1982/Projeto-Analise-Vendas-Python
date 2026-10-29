@@ -6,6 +6,8 @@ Projeto desenvolvido para praticar os fundamentos de Python por meio da análise
 
 O programa lê dados de um arquivo CSV, calcula indicadores comerciais, organiza os produtos por faturamento e apresenta um relatório no terminal.
 
+![Relatório de análise de vendas gerado com Python](relatorio_python_terminal.png)
+
 ## Tecnologias utilizadas
 
 - Python
